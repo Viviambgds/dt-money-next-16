@@ -1,6 +1,5 @@
 import { ITransaction } from "@/types/transaction";
 import { formatDate, formatPrice } from "@/utils";
-import Image from "next/image";
 
 export type TableProps = {
   data: ITransaction[];
@@ -14,21 +13,11 @@ export const Table = ({ data, onEdit, onDelete }: TableProps) => {
       <table className="w-full mt-16 border-separate border-spacing-y-2">
         <thead>
           <tr>
-            <th className="px-4 text-left text-table-header text-base font-medium">
-              Título
-            </th>
-            <th className="px-4 text-left text-table-header text-base font-medium">
-              Preço
-            </th>
-            <th className="px-4 text-left text-table-header text-base font-medium">
-              Categoria
-            </th>
-            <th className="px-4 text-left text-table-header text-base font-medium">
-              Data
-            </th>
-            <th className="px-4 text-left text-table-header text-base font-medium">
-              Ações
-            </th>
+            <th className="px-4 text-left text-table-header text-base font-medium">Título</th>
+            <th className="px-4 text-left text-table-header text-base font-medium">Preço</th>
+            <th className="px-4 text-left text-table-header text-base font-medium">Categoria</th>
+            <th className="px-4 text-left text-table-header text-base font-medium">Data</th>
+            <th className="px-4 text-left text-table-header text-base font-medium">Ações</th>
           </tr>
         </thead>
         <tbody>
@@ -54,27 +43,17 @@ export const Table = ({ data, onEdit, onDelete }: TableProps) => {
                 <div className="flex gap-2">
                   <button
                     onClick={() => onEdit(transaction)}
-                    className="p-1 hover:opacity-70 transition-opacity"
+                    className="p-1 hover:opacity-70 transition-opacity text-title text-xl"
                     aria-label="Editar"
                   >
-                    <Image
-                      src="/images/edit.png"
-                      alt="Editar"
-                      width={20}
-                      height={20}
-                    />
+                    ✏️
                   </button>
                   <button
                     onClick={() => onDelete(transaction.id)}
-                    className="p-1 hover:opacity-70 transition-opacity"
+                    className="p-1 hover:opacity-70 transition-opacity text-title text-xl"
                     aria-label="Excluir"
                   >
-                    <Image
-                      src="/images/delete.png"
-                      alt="Excluir"
-                      width={20}
-                      height={20}
-                    />
+                    🗑️
                   </button>
                 </div>
               </td>
